@@ -68,13 +68,10 @@ function CreatePost() {
 
     if (title && image && body) {
       b.current.disabled = "true";
-      fetch(
-        SERVER + `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-        {
-          method: "POST",
-          body: data,
-        }
-      )
+      fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+        method: "POST",
+        body: data,
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
