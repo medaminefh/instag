@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { v4 as uuid } from "uuid";
-import { UserContext } from "../App";
 
 const Profile = () => {
   const abort = new AbortController();

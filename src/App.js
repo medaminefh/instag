@@ -2,7 +2,7 @@ import React, { useContext, createContext, useEffect, useReducer } from "react";
 import "./App.css";
 import { Nav } from "./components/nav";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   useHistory,

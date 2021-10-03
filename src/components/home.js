@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const { state, dispatch } = useContext(UserContext);
   const [data, setData] = useState([]);
+  console.log(process.env);
   const SERVER =
     process.env.NODE_ENV === "development"
       ? process.env.REACT_APP_LOCAL_SERVER
