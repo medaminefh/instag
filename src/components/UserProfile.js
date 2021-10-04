@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import { v4 as uuid } from "uuid";
 import { UserContext } from "../App";
 import { useParams, useHistory } from "react-router-dom";
-import M from "materialize-css";
+import { toast } from "materialize-css";
 
 const UserProfile = () => {
   const history = useHistory();
@@ -31,7 +31,7 @@ const UserProfile = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({
+            toast({
               html: data.error,
               displayLength: 2500,
               classes: "toast-err",
@@ -75,7 +75,7 @@ const UserProfile = () => {
         localStorage.setItem("user", JSON.stringify(data));
       })
       .catch((err) => {
-        M.toast({
+        toast({
           html: err,
           displayLength: 1500,
           classes: "toast-err",
@@ -110,7 +110,7 @@ const UserProfile = () => {
         });
       })
       .catch((err) => {
-        M.toast({
+        toast({
           html: err,
           displayLength: 1500,
           classes: "toast-err",

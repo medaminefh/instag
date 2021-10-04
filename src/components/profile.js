@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 const Profile = () => {

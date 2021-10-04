@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { v4 as uuid } from "uuid";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
-import M from "materialize-css";
 
 const Sub = () => {
   const { state } = useContext(UserContext);

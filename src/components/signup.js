@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
-import M from "materialize-css";
+import { toast } from "materialize-css";
 
 const SignUp = () => {
   const history = useHistory();
@@ -13,6 +13,15 @@ const SignUp = () => {
       ? process.env.REACT_APP_LOCAL_SERVER
       : process.env.REACT_APP_ONLINE_SERVER;
   const PostData = () => {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      b.current.removeAttribute("disabled");
+      toast({
+        html: "Invalid Email",
+        displayLength: 1500,
+        classes: "toast-err",
+      });
+      return;
+    }
     b.current.disabled = "true";
     fetch(SERVER + "/signup", {
       method: "post",
@@ -25,17 +34,8 @@ const SignUp = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-          b.current.removeAttribute("disabled");
-          M.toast({
-            html: "Invalid Email",
-            displayLength: 1500,
-            classes: "toast-err",
-          });
-          return;
-        }
         if (data.error) {
-          M.toast({
+          toast({
             html: data.error,
             displayLength: 1500,
             classes: "toast-err",
@@ -43,7 +43,7 @@ const SignUp = () => {
           b.current.removeAttribute("disabled");
           return;
         } else {
-          M.toast({
+          toast({
             html: data.message,
             displayLength: 4500,
             classes: "toast-success",
@@ -53,7 +53,7 @@ const SignUp = () => {
         }
       })
       .catch((err) => {
-        M.toast({
+        toast({
           html: "<strong>Please Try Later</strong>",
           displayLength: 3000,
           classes: "toast-err",

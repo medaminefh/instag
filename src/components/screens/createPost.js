@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import M from "materialize-css";
+import { toast } from "materialize-css";
 
 function CreatePost() {
   const history = useHistory();
@@ -32,14 +32,14 @@ function CreatePost() {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({
+            toast({
               html: data.error,
               displayLength: 1500,
               classes: "toast-err",
             });
             return;
           } else {
-            M.toast({
+            toast({
               html: "Post Created Successfully",
               displayLength: 4500,
               classes: "toast-success",
@@ -49,7 +49,7 @@ function CreatePost() {
           }
         })
         .catch((err) => {
-          M.toast({
+          toast({
             html: "<strong>Please Try Later</strong>",
             displayLength: 3000,
             classes: "toast-err",
@@ -75,7 +75,7 @@ function CreatePost() {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({
+            toast({
               html: `<strong>${data.error.message}</strong>`,
               displayLength: 2500,
               classes: "toast-err",
@@ -83,7 +83,6 @@ function CreatePost() {
             b.current.removeAttribute("disabled");
             return;
           }
-          console.log(data);
           setUrl(data.url);
         })
         .catch((err) => {
@@ -91,7 +90,7 @@ function CreatePost() {
           console.log("err with uploading img :", err);
         });
     } else {
-      M.toast({
+      toast({
         html: "<strong>Please Fill All The Fields</strong>",
         displayLength: 1500,
         classes: "toast-err",

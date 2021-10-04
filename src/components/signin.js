@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
-import M from "materialize-css";
+import { toast } from "materialize-css";
 import { UserContext } from "../App";
 
 const SignIn = () => {
@@ -15,6 +15,15 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
 
   const PostData = () => {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      b.current.removeAttribute("disabled");
+      toast({
+        html: "Invalid Email",
+        displayLength: 1500,
+        classes: "toast-err",
+      });
+      return;
+    }
     b.current.disabled = "true";
     fetch(SERVER + "/signin", {
       method: "post",
@@ -26,18 +35,9 @@ const SignIn = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-          b.current.removeAttribute("disabled");
-          M.toast({
-            html: "Invalid Email",
-            displayLength: 1500,
-            classes: "toast-err",
-          });
-          return;
-        }
         if (data.error) {
           b.current.removeAttribute("disabled");
-          M.toast({
+          toast({
             html: data.error,
             displayLength: 1500,
             classes: "toast-err",
@@ -47,7 +47,7 @@ const SignIn = () => {
           localStorage.setItem("jwt", data.token);
           dispatch({ type: "USER", payload: data.user });
           localStorage.setItem("user", JSON.stringify(data.user));
-          M.toast({
+          toast({
             html: "Signin Successfully",
             displayLength: 4500,
             classes: "toast-success",
@@ -57,7 +57,7 @@ const SignIn = () => {
         }
       })
       .catch((err) => {
-        M.toast({
+        toast({
           html: "<strong>Please Try Later</strong>",
           displayLength: 3000,
           classes: "toast-err",

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../App";
-import M from "materialize-css";
+import { toast } from "materialize-css";
 
 export const Nav = () => {
   const history = useHistory();
@@ -29,7 +29,7 @@ export const Nav = () => {
         <button
           onClick={(e) => {
             localStorage.clear();
-            M.toast({
+            toast({
               html: "<strong>You Logged Out </strong>",
               displayLength: 2000,
               classes: "blue",
