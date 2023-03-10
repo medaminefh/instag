@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/instag/precache-manifest.3f865d474676bb9e031aea16ddb6b39b.js"
+  "/instag/precache-manifest.bc9ed0fdd9cd416472628b322de65069.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b163ab4ece0f403874b6488c58a461e",
+    "revision": "ee5930de0f712b13bdbe6a65068fbee0",
     "url": "/instag/index.html"
   },
   {
-    "revision": "79c66fd2754b4b7af671",
+    "revision": "ed70900506532b7b091f",
     "url": "/instag/static/css/main.6351aa98.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/instag/static/js/2.4fa570d8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79c66fd2754b4b7af671",
-    "url": "/instag/static/js/main.53f99dcd.chunk.js"
+    "revision": "ed70900506532b7b091f",
+    "url": "/instag/static/js/main.be381384.chunk.js"
   },
   {
     "revision": "83f36d8236bcbdef4c93",
