@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/instag/static/css/main.6351aa98.chunk.css",
-    "main.js": "/instag/static/js/main.be381384.chunk.js",
-    "main.js.map": "/instag/static/js/main.be381384.chunk.js.map",
+    "main.js": "/instag/static/js/main.fa12b35a.chunk.js",
+    "main.js.map": "/instag/static/js/main.fa12b35a.chunk.js.map",
     "runtime-main.js": "/instag/static/js/runtime-main.0f481324.js",
     "runtime-main.js.map": "/instag/static/js/runtime-main.0f481324.js.map",
     "static/js/2.4fa570d8.chunk.js": "/instag/static/js/2.4fa570d8.chunk.js",
     "static/js/2.4fa570d8.chunk.js.map": "/instag/static/js/2.4fa570d8.chunk.js.map",
     "index.html": "/instag/index.html",
-    "precache-manifest.bc9ed0fdd9cd416472628b322de65069.js": "/instag/precache-manifest.bc9ed0fdd9cd416472628b322de65069.js",
+    "precache-manifest.91859c33fd51c4315d089d71d972a40c.js": "/instag/precache-manifest.91859c33fd51c4315d089d71d972a40c.js",
     "service-worker.js": "/instag/service-worker.js",
     "static/css/main.6351aa98.chunk.css.map": "/instag/static/css/main.6351aa98.chunk.css.map",
     "static/js/2.4fa570d8.chunk.js.LICENSE.txt": "/instag/static/js/2.4fa570d8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0f481324.js",
     "static/js/2.4fa570d8.chunk.js",
     "static/css/main.6351aa98.chunk.css",
-    "static/js/main.be381384.chunk.js"
+    "static/js/main.fa12b35a.chunk.js"
   ]
 }
